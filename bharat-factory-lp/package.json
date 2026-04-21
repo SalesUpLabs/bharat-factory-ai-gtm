@@ -1,0 +1,14 @@
+{
+  "name": "bharat-factory-lp",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "secret:slack": "wrangler secret put SLACK_WEBHOOK_URL"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}

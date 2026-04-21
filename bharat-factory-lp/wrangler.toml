@@ -6,3 +6,10 @@ compatibility_date = "2024-10-01"
 directory = "./public"
 not_found_handling = "single-page-application"
 html_handling = "auto-trailing-slash"
+
+# Custom domain — zone must be on the same Cloudflare account.
+# Wrangler will provision the hostname + cert automatically on `deploy`.
+routes = [
+  { pattern = "bharataifactory.com", custom_domain = true },
+  { pattern = "www.bharataifactory.com", custom_domain = true },
+]
