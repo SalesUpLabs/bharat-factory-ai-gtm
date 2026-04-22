@@ -11,7 +11,7 @@
 > **Golden rules:**
 > - Never say "Build.ai" · always "Bharat AI Factory"
 > - Always include `https://bharataifactory.com` or `/refer` (mobile-optimized LP with WA CTA)
-> - Always sign-off with WhatsTool number `+91 93819 34982` or call-Miskat `+91 91354 28050`
+> - Always sign-off with WhatsTool number `+91 91354 28050` or call-Miskat `+91 91354 28050`
 > - Use 🇮🇳 + emoji sparingly — Indian factory owners trust 2-3 emojis max, spam-feel above that
 
 ---
@@ -58,7 +58,7 @@
 > 1,300+ textile factories pehle se partner hain (Hubli, Coimbatore, Tirupur, Ahmedabad).
 >
 > 2 minute ka form: https://bharataifactory.com
-> Ya seedha WhatsApp: +91 93819 34982
+> Ya seedha WhatsApp: +91 91354 28050
 
 **Auto components variant:**
 *(swap "textile" → "auto components"; swap cluster list → "Pune, Chennai, Sriperumbudur, Nashik, Sanand")*
@@ -119,7 +119,7 @@
 >
 > Details + audit form: https://bharataifactory.com
 >
-> Agar interested ho to WhatsApp pe seedha baat kar lo: +91 93819 34982. Ya call karein Miskat ji ko: +91 91354 28050.
+> Agar interested ho to WhatsApp pe seedha baat kar lo: +91 91354 28050. Ya call karein Miskat ji ko: +91 91354 28050.
 >
 > — [Your name]
 
@@ -176,7 +176,7 @@
 > ✓ Pehle 100 partners ko robots + humanoids par founding-partner pricing
 >
 > Aaj apply karo — slot lock ho jayega.
-> 👉 https://bharataifactory.com · +91 93819 34982
+> 👉 https://bharataifactory.com · +91 91354 28050
 
 ---
 
@@ -194,7 +194,7 @@
 >
 > Karnataka textile belt mein pehle se 30+ factories onboard.
 >
-> Interested: https://bharataifactory.com ya +91 93819 34982.
+> Interested: https://bharataifactory.com ya +91 91354 28050.
 
 *(Template: swap "Hubli textile" → "Coimbatore textile", "Pune auto", "Sanand chemical", "Chennai leather" etc. for your target cluster.)*
 
@@ -236,7 +236,7 @@
 > ✓ Consultants, RE brokers, banker RMs
 >
 > Submit intro in 60 seconds: https://bharataifactory.com/refer
-> Ya seedha WhatsApp: +91 93819 34982
+> Ya seedha WhatsApp: +91 91354 28050
 
 ---
 
@@ -253,7 +253,7 @@
 >
 > Details: https://bharataifactory.com/refer
 >
-> 30 seconds ka form hai. Agar 2-3 factory owners mann mein aate hain to directly WhatsApp kar do — +91 93819 34982.
+> 30 seconds ka form hai. Agar 2-3 factory owners mann mein aate hain to directly WhatsApp kar do — +91 91354 28050.
 >
 > — [Your name]
 
@@ -277,7 +277,7 @@
 > 5-7 din ka pilot. Workers ka normal kaam chalta rehta hai, bas 7 ghante/din headset pehnte hain.
 >
 > Form (2 min): https://bharataifactory.com
-> Ya WhatsApp: +91 93819 34982 (Bharat AI Factory team)
+> Ya WhatsApp: +91 91354 28050 (Bharat AI Factory team)
 >
 > *[Forward message ends]*
 
@@ -309,7 +309,7 @@
 > Ideal for CAs serving MSMEs, operations consultants, machinery/raw-material suppliers, industrial RE brokers, industry association members.
 >
 > Submit in 60 seconds: https://bharataifactory.com/refer
-> Team WhatsApp: +91 93819 34982
+> Team WhatsApp: +91 91354 28050
 
 ---
 
