@@ -4,7 +4,7 @@
 >
 > **Two tracks:**
 > - **Track A — Factory owners** (they earn ₹4L/month)
-> - **Track B — Referrers** (they earn ₹25k per closed intro)
+> - **Track B — Referrers** (they earn ₹50k per closed intro · paid after camera deployed + 30 days of data)
 >
 > **3 languages per template:** Hinglish (default for India · highest reply rate), pure English, pure Hindi (Devanagari).
 >
@@ -207,13 +207,13 @@
 ### B1 — Ultra-short forward (≤200 chars)
 
 **Hinglish:**
-> 💰 Factory owners jaante ho? **₹25,000 cash per closed intro** — no cap.
+> 💰 Factory owners jaante ho? **₹50,000 per closed intro** — no cap.
 > Zero effort: bas naam + number do.
 > 1,300+ Indian factories already onboard.
 > 👉 https://bharataifactory.com/refer
 
 **English:**
-> 💰 Know factory owners? **₹25,000 per closed intro** — no cap.
+> 💰 Know factory owners? **₹50,000 per closed intro** — no cap.
 > Zero effort · bas share name + phone.
 > 1,300+ Indian factories already onboard.
 > 👉 https://bharataifactory.com/refer
@@ -223,11 +223,11 @@
 ### B2 — CA / professional network group post
 
 **Hinglish:**
-> 💼 *₹25,000 per factory intro* — for anyone with an MSME/factory-owner network
+> 💼 *₹50,000 per factory intro* — for anyone with an MSME/factory-owner network
 >
 > Bharat AI Factory (Make-in-India-aligned industrial AI initiative) pays Indian factories ₹4 lakh/month per 100 workers for a zero-cost data partnership.
 >
-> *You know a factory owner?* Refer them. When their pilot starts, you get *₹25,000 cash via UPI within 48 hours*. No cap on intros.
+> *You know a factory owner?* Refer them. When their pilot starts, you get *₹50,000 via UPI once camera is deployed and 30 days of data is collected*. No cap on intros.
 >
 > Perfect for:
 > ✓ CAs serving MSME factory clients
@@ -288,7 +288,7 @@
 **Pair with:** `/creatives-referrer/01_referrer_hero_cash-tagged.jpg` (with MII badge)
 
 **Caption:**
-> 💰 *₹25,000 per factory intro* · No cap · UPI in 48 hrs
+> 💰 *₹50,000 per factory intro* · No cap · UPI in 48 hrs
 >
 > Know a factory owner? You're a referral away from cash.
 >
