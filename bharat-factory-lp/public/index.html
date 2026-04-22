@@ -34,6 +34,21 @@
   }
 </script>
 
+<!-- Meta Pixel — replace PIXEL-TODO with real Pixel ID once Abhishek sets up Meta Business Manager -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL-TODO');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL-TODO&ev=PageView&noscript=1"/></noscript>
+
 <style>
 :root{
   --ink:#141414; --ink2:#2a2a2a; --cream:#fbf7ef; --paper:#fff;
@@ -290,6 +305,7 @@ input:valid:not(:placeholder-shown),select:valid:not([value=""]):not(:focus){bor
 .submit-btn .arrow{transition:transform .2s}
 .submit-btn:hover .arrow{transform:translateX(4px)}
 .submit-btn .wa-svg{width:22px;height:22px}
+.req{color:var(--red);font-weight:700}
 
 /* SUCCESS CARD (post-submit) */
 .success-card{display:none;text-align:center;padding:8px 4px}
@@ -633,65 +649,40 @@ footer a{color:var(--gold)}
       <div class="form-box-sub">Takes 90 seconds · We'll WhatsApp you today</div>
     </div>
     <form id="lead-form" class="v2">
+      <!-- CUT-DOWN FORM: 3 required + 2 optional dropdowns (was 7 required). Industry + role captured on WA reply. -->
       <div class="field-group">
-        <div class="fg-title">About you</div>
+        <div class="field">
+          <label>WhatsApp number <span class="req">*</span></label>
+          <input required name="phone" type="tel" placeholder="+91 98XXX XXXXX" autocomplete="tel" pattern="[+]?[0-9 -]{10,15}" inputmode="tel" autofocus />
+          <small class="help">We'll send audit details + ₹4L payout math here</small>
+        </div>
         <div class="row">
           <div class="field">
-            <label>Full name</label>
+            <label>Your name <span class="req">*</span></label>
             <input required name="name" placeholder="Rajesh Kumar" autocomplete="name" />
           </div>
           <div class="field">
-            <label>Your role</label>
-            <select required name="role">
-              <option value="">Select role</option>
-              <option>Owner / MD</option>
-              <option>Plant Head</option>
-              <option>Works Manager</option>
-              <option>Production Head</option>
-              <option>Operations Head</option>
-              <option>Other</option>
-            </select>
+            <label>Factory name <span class="req">*</span></label>
+            <input required name="company" placeholder="ABC Industries" autocomplete="organization" />
           </div>
-        </div>
-        <div class="field">
-          <label>WhatsApp number</label>
-          <input required name="phone" type="tel" placeholder="+91 98XXX XXXXX" autocomplete="tel" pattern="[+]?[0-9 -]{10,15}" inputmode="tel" />
-          <small class="help">We'll send your free audit details here</small>
-        </div>
-      </div>
-
-      <div class="field-group">
-        <div class="fg-title">About your factory</div>
-        <div class="field">
-          <label>Factory name</label>
-          <input required name="company" placeholder="ABC Industries Pvt Ltd" autocomplete="organization" />
         </div>
         <div class="row">
           <div class="field">
-            <label>Workers on floor</label>
-            <select required name="workers">
-              <option value="">Select size</option>
+            <label>Workers (optional)</label>
+            <select name="workers">
+              <option value="">Select</option>
               <option>50–100</option><option>100–500</option><option>500–2,000</option><option>2,000+</option>
             </select>
           </div>
           <div class="field">
-            <label>City</label>
-            <select required name="city">
-              <option value="">Select city</option>
-              <option>Bangalore / Bengaluru</option><option>Chennai / Sriperumbudur</option><option>Coimbatore</option>
-              <option>Hubli / Dharwad</option><option>Ahmedabad / Sanand</option><option>Nashik</option>
+            <label>City (optional)</label>
+            <select name="city">
+              <option value="">Select</option>
+              <option>Bangalore</option><option>Chennai</option><option>Coimbatore</option>
+              <option>Hubli</option><option>Ahmedabad</option><option>Nashik</option>
               <option>Pune</option><option>Mumbai</option><option>Hyderabad</option><option>Other</option>
             </select>
           </div>
-        </div>
-        <div class="field">
-          <label>Industry</label>
-          <select required name="industry">
-            <option value="">Select industry</option>
-            <option>Textile / Garment</option><option>Auto Components</option><option>Electronics Assembly</option>
-            <option>FMCG / Packaging</option><option>Metal Fabrication</option><option>Footwear</option>
-            <option>Plastics</option><option>Pharma / Chemical</option><option>Other</option>
-          </select>
         </div>
       </div>
 

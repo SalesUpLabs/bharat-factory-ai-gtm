@@ -12,6 +12,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel — replace PIXEL-TODO with real Pixel ID -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL-TODO');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL-TODO&ev=PageView&noscript=1"/></noscript>
+
 <style>
 :root{--ink:#141414;--ink2:#2a2a2a;--cream:#fbf7ef;--paper:#fff;--gold:#d4a42c;--saffron:#e8742c;--deep:#0f2540;--money:#1a6b3a;--mute:#6b6b6b;--line:#ead9b6}
 *{box-sizing:border-box;margin:0;padding:0}
