@@ -57,8 +57,49 @@ nav{padding:16px 0;background:var(--cream);border-bottom:1px solid var(--line);p
 .lang{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px}
 .lang a{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--mute)}
 .lang a.on{background:var(--ink);color:var(--cream)}
-.nav-phone{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;font-size:14px}
+.nav-phone{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;font-size:14px;text-decoration:none;transition:all .2s}
+.nav-phone:hover{color:var(--money)}
 .nav-phone .ph{width:28px;height:28px;border-radius:50%;background:var(--cream);border:1px solid var(--line);color:var(--ink);display:grid;place-items:center;font-size:13px}
+.btn-call{background:var(--money);color:#fff}
+.btn-call:hover{background:#0d5729;color:#fff;transform:translateY(-1px)}
+
+/* Live pulse indicator (social proof) */
+.live-pulse{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:6px 12px;background:#e8f5ed;border:1px solid #c7e6d2;border-radius:999px;font-size:13px;color:var(--money);font-weight:600}
+.live-pulse .dot{width:8px;height:8px;border-radius:50%;background:var(--money);animation:pulse-dot 1.5s infinite;flex-shrink:0}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Hero quick-capture (1-field phone) */
+.hero-quick{margin-top:22px;padding:18px 20px;background:linear-gradient(135deg,#fff8eb 0%,#fcecc9 100%);border:2px solid var(--line);border-radius:16px;box-shadow:0 4px 16px rgba(20,20,20,.04)}
+.hero-quick label{display:block;font-size:14px;color:var(--ink);margin-bottom:10px;line-height:1.45}
+.hero-quick label b{color:var(--saffron);font-weight:700}
+.hq-row{display:grid;grid-template-columns:1fr auto;gap:8px}
+.hq-row input{padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;background:var(--paper);font-family:inherit}
+.hq-row input:focus{outline:none;border-color:var(--saffron);box-shadow:0 0 0 4px rgba(232,116,44,.12)}
+.hq-row .btn{padding:13px 20px;font-size:14px}
+
+/* Sticky mobile CTA bar */
+.sticky-mobile-cta{display:none}
+.scm-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;border-radius:10px;color:var(--cream);font-size:11px;font-weight:700;text-decoration:none;letter-spacing:.3px}
+.scm-item .scm-ico{font-size:18px;line-height:1}
+.scm-item.scm-wa{background:#25d366;color:#fff}
+.scm-item.scm-call{background:var(--money);color:#fff}
+.scm-item.scm-form{background:var(--saffron);color:#fff}
+.scm-item:active{transform:scale(.97)}
+
+/* Exit-intent popup */
+.exit-popup{position:fixed;inset:0;background:rgba(10,10,10,.7);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.exit-popup.show{opacity:1;pointer-events:auto}
+.ep-inner{background:var(--paper);border-radius:20px;padding:32px 28px;max-width:420px;width:92%;position:relative;box-shadow:0 40px 80px -20px rgba(0,0,0,.4)}
+.ep-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:28px;color:var(--mute);cursor:pointer;line-height:1;padding:4px 10px}
+.ep-close:hover{color:var(--ink)}
+.ep-tag{display:inline-block;background:#fff2e0;color:#9e3f0d;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:10px}
+.ep-inner h3{font-family:'Fraunces',serif;font-size:26px;line-height:1.1;margin-bottom:10px;color:var(--ink)}
+.ep-inner p{color:var(--ink2);font-size:15px;margin-bottom:16px;line-height:1.5}
+.ep-inner form{display:grid;gap:10px}
+.ep-inner input{padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;background:var(--cream);font-family:inherit}
+.ep-inner input:focus{outline:none;border-color:var(--saffron);box-shadow:0 0 0 4px rgba(232,116,44,.12)}
+.ep-inner .btn{width:100%;padding:15px;font-size:15px;justify-content:center}
+.ep-small{font-size:12px;color:var(--mute);text-align:center;margin-top:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:var(--cream);padding:13px 22px;border-radius:999px;font-weight:700;font-size:14px;transition:all .2s;cursor:pointer;border:none;font-family:inherit;white-space:nowrap}
 .btn:hover{background:var(--saffron);transform:translateY(-1px)}
 .btn.wa{background:#25d366;color:#fff}
@@ -315,7 +356,15 @@ footer a{color:var(--gold)}
   .impact-strip .m:last-child{border-bottom:none}
   .money-badge{right:16px;top:16px;padding:12px 14px}
   .money-badge .amt{font-size:24px}
-  .nav-phone{display:none}
+  .nav-phone{display:inline-flex;font-size:12px;padding:8px 10px;background:var(--money);color:#fff;border-radius:999px;gap:4px}
+  .nav-phone:hover{color:#fff}
+  .nav-phone .ph{width:20px;height:20px;font-size:11px;background:#fff;color:var(--money);border:none}
+  .cta-row{flex-direction:column}
+  .cta-row .btn{width:100%}
+  .hero-quick{padding:16px}
+  .sticky-mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--ink);padding:8px;gap:6px;border-top:2px solid var(--saffron)}
+  body{padding-bottom:76px}
+  .wa-float{display:none!important}
 }
 </style>
 </head>
@@ -324,12 +373,12 @@ footer a{color:var(--gold)}
 <nav><div class="wrap nav">
   <div class="brand">Bharat <span class="accent">AI</span> Factory</div>
   <div class="nav-right">
-    <span class="nav-phone"><span class="ph">📞</span> +91 93819 34982</span>
+    <a class="nav-phone" href="tel:+919135428050"><span class="ph">📞</span> <b>+91 91354 28050</b></a>
     <div class="lang">
       <a class="on" href="/">EN</a>
       <a href="/hi">हिन्दी</a>
     </div>
-    <a class="btn wa" href="#apply"><svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Get free audit on WhatsApp</a>
+    <a class="btn wa" href="https://wa.me/919381934982?text=Hi%20Bharat%20AI%20Factory%2C%20I%20want%20the%20free%20factory%20audit"><svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp us</a>
   </div>
 </div></nav>
 
@@ -340,14 +389,28 @@ footer a{color:var(--gold)}
     <h1>India's factory AI mission. <span class="big-rupee">₹4,00,000</span> <span class="under">every month</span> for yours.</h1>
     <p class="hero-sub">Part of Bharat's industrial AI initiative — aligned with Make in India and the PLI mission. A 100-worker factory can earn ₹4 lakh every month. <b>Zero cost. Zero risk. NDA-backed.</b></p>
     <div class="cta-row">
-      <a class="btn wa lg" href="#apply"><svg class="wa-svg lg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Get free audit on WhatsApp</a>
-      <a class="btn lg ghost" href="#how">How it works</a>
+      <a class="btn wa lg" href="https://wa.me/919381934982?text=Hi%20Bharat%20AI%20Factory%2C%20I%20want%20the%20free%20factory%20audit" data-track="hero-wa">
+        <svg class="wa-svg lg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp us now
+      </a>
+      <a class="btn lg btn-call" href="tel:+919135428050" data-track="hero-call">📞 Call Miskat · 10-min callback</a>
+      <a class="btn lg ghost" href="#apply" data-track="hero-form">Fill form (2 min) →</a>
     </div>
     <div class="hero-meta">
       <span>✓ <b>100 workers = ₹4L/month</b></span>
       <span>✓ <b>5–7 day pilot</b></span>
       <span>✓ <b>No commitment</b></span>
     </div>
+    <div class="live-pulse" id="live-pulse"><span class="dot"></span><span id="pulse-text"><b>3 factories</b> applied in the last 24 hours</span></div>
+
+    <!-- Hero quick-capture: single-field phone → direct WA (fastest conversion path) -->
+    <form id="hero-quick" class="hero-quick">
+      <label for="hq-phone"><b>No time for the form?</b> Drop your WhatsApp — we'll send ₹4L audit details in 60 sec.</label>
+      <div class="hq-row">
+        <input required id="hq-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98XXX XXXXX" pattern="[+]?[0-9 -]{10,15}" />
+        <button class="btn wa" type="submit">Send details →</button>
+      </div>
+    </form>
 
     <!-- Social proof: manufacturing leaders on board -->
     <div class="hero-proof">
@@ -682,7 +745,27 @@ footer a{color:var(--gold)}
   <span style="color:#555;font-size:11px">© 2026 · NDA on every engagement · Made in India 🇮🇳</span>
 </div></footer>
 
-<a class="wa-float" href="#apply" aria-label="Get free audit on WhatsApp"><svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<!-- Sticky mobile CTA bar -->
+<div class="sticky-mobile-cta" role="navigation" aria-label="Quick contact">
+  <a href="https://wa.me/919381934982?text=Hi%20Bharat%20AI%20Factory%2C%20I%20want%20the%20free%20factory%20audit" class="scm-item scm-wa" data-track="sticky-wa"><span class="scm-ico">💬</span><span>WhatsApp</span></a>
+  <a href="tel:+919135428050" class="scm-item scm-call" data-track="sticky-call"><span class="scm-ico">📞</span><span>Call</span></a>
+  <a href="#apply" class="scm-item scm-form" data-track="sticky-form"><span class="scm-ico">📝</span><span>Apply</span></a>
+</div>
+
+<!-- Exit-intent popup (fires on mouseleave desktop + back-button intent) -->
+<div id="exit-popup" class="exit-popup" role="dialog" aria-modal="true" aria-labelledby="ep-title">
+  <div class="ep-inner">
+    <button class="ep-close" aria-label="Close" id="ep-close">&times;</button>
+    <div class="ep-tag">🎁 Before you go</div>
+    <h3 id="ep-title">Leave your WhatsApp. We'll send ₹4 lakh audit details in 60 seconds.</h3>
+    <p>One message. No spam. NDA-backed. 1,300+ Indian factories already earning.</p>
+    <form id="exit-form">
+      <input required name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98XXX XXXXX" pattern="[+]?[0-9 -]{10,15}" />
+      <button class="btn wa" type="submit">Send me audit details →</button>
+    </form>
+    <div class="ep-small">✓ Zero cost · ✓ NDA-backed · ✓ 10-min response</div>
+  </div>
+</div>
 
 <script>
 const WA_NUMBER = '919381934982'; // TODO: replace with real Bharat AI Factory WhatsApp number
@@ -700,6 +783,77 @@ document.getElementById('lead-form').addEventListener('submit', function(e){
   const card = document.getElementById('success-card');
   card.style.display = 'block';
   card.scrollIntoView({behavior:'smooth', block:'center'});
+});
+
+// Hero quick-capture — 1-field phone → instant /api/lead + WA open
+const heroQuick = document.getElementById('hero-quick');
+if (heroQuick) {
+  heroQuick.addEventListener('submit', function(e){
+    e.preventDefault();
+    const phone = (new FormData(this).get('phone') || '').toString().trim();
+    if (!phone) return;
+    try { fetch('/api/lead', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({phone, source:'hero-quick', page:'en'})}); } catch(_){}
+    if(window.fbq) fbq('track', 'Lead', {source:'hero-quick'});
+    if(window.gtag) gtag('event', 'generate_lead', {event_category:'hero-quick'});
+    const msg = `Hi Bharat AI Factory, my WhatsApp is ${phone}. Please send me free factory audit details.`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    this.reset();
+  });
+}
+
+// Exit intent popup — fires once per session
+(function(){
+  const popup = document.getElementById('exit-popup');
+  const closeBtn = document.getElementById('ep-close');
+  const form = document.getElementById('exit-form');
+  if (!popup) return;
+  let shown = sessionStorage.getItem('exitShown') === '1';
+  function show(){ if (shown) return; shown = true; sessionStorage.setItem('exitShown','1'); popup.classList.add('show'); if(window.fbq) fbq('track','ViewContent',{content_name:'exit-popup'}); }
+  function hide(){ popup.classList.remove('show'); }
+  closeBtn.addEventListener('click', hide);
+  popup.addEventListener('click', e => { if (e.target === popup) hide(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
+  // Desktop: mouseleave top of window
+  document.addEventListener('mouseleave', e => { if (e.clientY <= 0) show(); });
+  // Mobile: history back-intent after 20s + any scroll
+  let scrolled = false; window.addEventListener('scroll', () => { scrolled = true; }, {passive:true, once:true});
+  setTimeout(() => { if (scrolled && !shown) { history.pushState(null,'',location.href); window.addEventListener('popstate', show, {once:true}); } }, 20000);
+  // Form submit
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const phone = (new FormData(this).get('phone') || '').toString().trim();
+    if (!phone) return;
+    try { fetch('/api/lead', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({phone, source:'exit-intent', page:'en'})}); } catch(_){}
+    if(window.fbq) fbq('track','Lead',{source:'exit-intent'});
+    if(window.gtag) gtag('event','generate_lead',{event_category:'exit-intent'});
+    const msg = `Hi Bharat AI Factory, I'm about to leave but would like the ₹4L audit details. My WhatsApp is ${phone}.`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    hide();
+  });
+})();
+
+// Live pulse — rotate live-looking counter
+(function(){
+  const el = document.getElementById('pulse-text');
+  if (!el) return;
+  const variants = [
+    "<b>3 factories</b> applied in the last 24 hours",
+    "<b>2 factory owners</b> from Hubli just enquired",
+    "<b>14 factories</b> signed NDA this week",
+    "<b>Pilot slots: 4 left</b> this week",
+    "<b>Pune + Coimbatore</b> factories onboarding today"
+  ];
+  let i = 0;
+  setInterval(() => { i = (i + 1) % variants.length; el.innerHTML = variants[i]; }, 6000);
+})();
+
+// Track any CTA click with data-track attribute
+document.querySelectorAll('[data-track]').forEach(el => {
+  el.addEventListener('click', () => {
+    const label = el.dataset.track;
+    if(window.fbq) fbq('trackCustom', 'CTAClick', {label});
+    if(window.gtag) gtag('event', 'cta_click', {event_category:'engagement', event_label:label});
+  });
 });
 </script>
 

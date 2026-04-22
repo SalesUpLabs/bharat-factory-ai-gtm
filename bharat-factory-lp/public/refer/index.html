@@ -140,6 +140,27 @@ footer{padding:36px 0;background:var(--ink);color:#8a8a8a;font-size:13px;text-al
 footer a{color:var(--gold)}
 
 .wa-float{position:fixed;bottom:20px;right:20px;z-index:100;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.4);font-size:26px}
+.sticky-mobile-cta{display:none}
+.scm-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;border-radius:10px;color:var(--cream);font-size:11px;font-weight:700;text-decoration:none}
+.scm-item.scm-wa{background:#25d366;color:#fff}
+.scm-item.scm-call{background:var(--money);color:#fff}
+.scm-item.scm-form{background:var(--saffron);color:#fff}
+.exit-popup{position:fixed;inset:0;background:rgba(10,10,10,.7);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.exit-popup.show{opacity:1;pointer-events:auto}
+.ep-inner{background:var(--paper);border-radius:20px;padding:32px 28px;max-width:420px;width:92%;position:relative;box-shadow:0 40px 80px -20px rgba(0,0,0,.4)}
+.ep-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:28px;color:var(--mute);cursor:pointer;padding:4px 10px}
+.ep-tag{display:inline-block;background:#e8f5ed;color:var(--money);padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:10px}
+.ep-inner h3{font-family:'Fraunces',serif;font-size:24px;line-height:1.15;margin-bottom:10px}
+.ep-inner p{color:var(--ink2);font-size:15px;margin-bottom:16px;line-height:1.5}
+.ep-inner form{display:grid;gap:10px}
+.ep-inner input{padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;background:var(--cream);font-family:inherit}
+.ep-inner .btn{width:100%;padding:15px;font-size:15px;justify-content:center}
+.ep-small{font-size:12px;color:var(--mute);text-align:center;margin-top:10px}
+@media (max-width:940px){
+  .sticky-mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--ink);padding:8px;gap:6px;border-top:2px solid var(--saffron)}
+  body{padding-bottom:76px}
+  .wa-float{display:none!important}
+}
 
 @media (max-width:940px){
   h1{font-size:40px}h2{font-size:30px}
@@ -158,6 +179,7 @@ footer a{color:var(--gold)}
   <div class="brand">Bharat <span class="accent">AI</span> Factory</div>
   <div class="nav-right">
     <a class="nav-back" href="/">← Factory owner? Go to main site</a>
+    <a class="nav-phone" href="tel:+919135428050" style="display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;font-size:14px;text-decoration:none"><span style="width:28px;height:28px;border-radius:50%;background:var(--cream);border:1px solid var(--line);display:grid;place-items:center;font-size:13px">📞</span><b>+91 91354 28050</b></a>
     <a class="btn wa" href="https://wa.me/919381934982?text=Hi%20Bharat%20AI%20Factory%2C%20I%20want%20to%20refer%20a%20factory"><span class="wa-icon">💬</span>WhatsApp</a>
   </div>
 </div></nav>
@@ -378,6 +400,28 @@ footer a{color:var(--gold)}
   <span style="color:#555;font-size:11px">© 2026 · Payments subject to KYC · Transparent terms</span>
 </div></footer>
 
+<!-- Sticky mobile CTA (referrer) -->
+<div class="sticky-mobile-cta">
+  <a href="https://wa.me/919381934982?text=Hi%20Bharat%20AI%20Factory%2C%20I%20want%20to%20refer%20a%20factory" class="scm-item scm-wa" data-track="sticky-wa-refer"><span>💬</span><span>WhatsApp</span></a>
+  <a href="tel:+919135428050" class="scm-item scm-call" data-track="sticky-call-refer"><span>📞</span><span>Call</span></a>
+  <a href="#apply" class="scm-item scm-form" data-track="sticky-form-refer"><span>📝</span><span>Submit intro</span></a>
+</div>
+
+<!-- Exit popup (referrer) -->
+<div id="exit-popup" class="exit-popup" role="dialog" aria-modal="true">
+  <div class="ep-inner">
+    <button class="ep-close" id="ep-close" aria-label="Close">&times;</button>
+    <div class="ep-tag">💰 Before you go</div>
+    <h3>Know just one factory owner?</h3>
+    <p>Drop your WhatsApp. We'll send a ready-to-forward message you can send to any factory owner. <b>₹25,000 for every closed intro.</b></p>
+    <form id="exit-form">
+      <input required name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98XXX XXXXX" pattern="[+]?[0-9 -]{10,15}" />
+      <button class="btn wa" type="submit">Send me the referrer kit →</button>
+    </form>
+    <div class="ep-small">✓ No cap · ✓ UPI in 48 hrs after pilot starts</div>
+  </div>
+</div>
+
 <a class="wa-float" href="https://wa.me/919381934982?text=Hi%20Bharat%20AI%20Factory%2C%20I%20want%20to%20refer%20a%20factory" aria-label="WhatsApp">💬</a>
 
 <script>
@@ -393,6 +437,37 @@ document.getElementById('refer-form').addEventListener('submit', async function(
   const msg = `Hi Bharat AI Factory, I'm submitting a factory intro.\n\n— MY DETAILS —\nName: ${payload.ref_name}\nRole: ${payload.ref_role}\nMy phone: ${payload.ref_phone}\n\n— FACTORY DETAILS —\nFactory: ${payload.factory_company}\nOwner: ${payload.factory_owner}\nOwner phone: ${payload.factory_phone}\nCity: ${payload.factory_city}\nWorkers: ${payload.factory_workers}\nMy relationship: ${payload.relationship}\nNotes: ${payload.notes || 'None'}`;
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 });
+
+// Exit popup for referrers
+(function(){
+  const p = document.getElementById('exit-popup'); if(!p) return;
+  const close = document.getElementById('ep-close'); const form = document.getElementById('exit-form');
+  let shown = sessionStorage.getItem('exitShownRefer')==='1';
+  function show(){if(shown) return; shown=true; sessionStorage.setItem('exitShownRefer','1'); p.classList.add('show');}
+  function hide(){p.classList.remove('show');}
+  close.addEventListener('click',hide);
+  p.addEventListener('click',e=>{if(e.target===p) hide();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') hide();});
+  document.addEventListener('mouseleave',e=>{if(e.clientY<=0) show();});
+  let scrolled=false; window.addEventListener('scroll',()=>{scrolled=true;},{passive:true,once:true});
+  setTimeout(()=>{if(scrolled&&!shown){history.pushState(null,'',location.href); window.addEventListener('popstate',show,{once:true});}},20000);
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const phone = (new FormData(this).get('phone')||'').toString().trim(); if(!phone) return;
+    try{fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone,source:'exit-intent',page:'refer',track:'referrer-kit'})});}catch(_){}
+    if(window.fbq) fbq('track','Lead',{source:'exit-intent-refer'});
+    if(window.gtag) gtag('event','generate_lead',{event_category:'exit-intent',event_label:'referrer'});
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hi Bharat AI Factory, send me the referrer kit. My WhatsApp: '+phone)}`,'_blank');
+    hide();
+  });
+})();
+
+// CTA tracking
+document.querySelectorAll('[data-track]').forEach(el=>el.addEventListener('click',()=>{
+  const label = el.dataset.track;
+  if(window.fbq) fbq('trackCustom','CTAClick',{label});
+  if(window.gtag) gtag('event','cta_click',{event_category:'engagement',event_label:label});
+}));
 </script>
 
 </body>
