@@ -572,23 +572,9 @@ footer a{color:var(--gold)}
     <form id="lead-form" class="v2">
       <div class="field-group">
         <div class="fg-title">About you</div>
-        <div class="row">
-          <div class="field">
-            <label>Full name</label>
-            <input required name="name" placeholder="Rajesh Kumar" autocomplete="name" />
-          </div>
-          <div class="field">
-            <label>Your role</label>
-            <select required name="role">
-              <option value="">Select role</option>
-              <option>Owner / MD</option>
-              <option>Plant Head</option>
-              <option>Works Manager</option>
-              <option>Production Head</option>
-              <option>Operations Head</option>
-              <option>Other</option>
-            </select>
-          </div>
+        <div class="field">
+          <label>Full name</label>
+          <input required name="name" placeholder="Rajesh Kumar" autocomplete="name" />
         </div>
         <div class="field">
           <label>WhatsApp number</label>
@@ -605,30 +591,21 @@ footer a{color:var(--gold)}
         </div>
         <div class="row">
           <div class="field">
-            <label>Workers on floor</label>
-            <select required name="workers">
+            <label>Workers on floor <small style="color:var(--mute);font-weight:500;text-transform:none;letter-spacing:0">(optional)</small></label>
+            <select name="workers">
               <option value="">Select size</option>
               <option>50–100</option><option>100–500</option><option>500–2,000</option><option>2,000+</option>
             </select>
           </div>
           <div class="field">
-            <label>City</label>
-            <select required name="city">
+            <label>City <small style="color:var(--mute);font-weight:500;text-transform:none;letter-spacing:0">(optional)</small></label>
+            <select name="city">
               <option value="">Select city</option>
               <option>Bangalore / Bengaluru</option><option>Chennai / Sriperumbudur</option><option>Coimbatore</option>
               <option>Hubli / Dharwad</option><option>Ahmedabad / Sanand</option><option>Nashik</option>
               <option>Pune</option><option>Mumbai</option><option>Hyderabad</option><option>Other</option>
             </select>
           </div>
-        </div>
-        <div class="field">
-          <label>Industry</label>
-          <select required name="industry">
-            <option value="">Select industry</option>
-            <option>Textile / Garment</option><option>Auto Components</option><option>Electronics Assembly</option>
-            <option>FMCG / Packaging</option><option>Metal Fabrication</option><option>Footwear</option>
-            <option>Plastics</option><option>Pharma / Chemical</option><option>Other</option>
-          </select>
         </div>
       </div>
 
@@ -693,7 +670,7 @@ document.getElementById('lead-form').addEventListener('submit', function(e){
   if(window.fbq) fbq('track', 'Lead');
   if(window.gtag_report_conversion) gtag_report_conversion();
   const firstName = (lead.name || 'there').trim().split(/\s+/)[0] || 'there';
-  const msg = `Hi Bharat AI Factory, I want free factory audit.\n\nName: ${lead.name||'-'}\nRole: ${lead.role||'-'}\nCompany: ${lead.company}\nPhone: ${lead.phone}\nWorkers: ${lead.workers||'-'}\nCity: ${lead.city||'-'}\nIndustry: ${lead.industry||'-'}`;
+  const msg = `Hi Bharat AI Factory, I want free factory audit.\n\nName: ${lead.name||'-'}\nCompany: ${lead.company}\nPhone: ${lead.phone}\nWorkers: ${lead.workers||'-'}\nCity: ${lead.city||'-'}`;
   document.getElementById('success-name').textContent = firstName;
   document.getElementById('success-wa-btn').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
   document.getElementById('form-state').style.display = 'none';
