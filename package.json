@@ -4,7 +4,9 @@
   "description": "Repo-root wrapper so Cloudflare Workers Builds can install and deploy the LP regardless of the dashboard Root Directory setting.",
   "scripts": {
     "build": "npm ci --prefix bharat-factory-lp",
-    "deploy": "npm --prefix bharat-factory-lp run deploy"
+    "deploy": "npm --prefix bharat-factory-lp run deploy",
+    "dev": "npm --prefix bharat-factory-lp run dev",
+    "tail": "npm --prefix bharat-factory-lp run tail"
   },
   "engines": {
     "node": ">=20"

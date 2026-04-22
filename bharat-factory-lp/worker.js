@@ -16,7 +16,7 @@ export default {
             .map(([k, v]) => `*${k}:* ${v}`)
             .join('\n');
           const slackPayload = {
-            text: `:factory: New Bharat Factory AI lead`,
+            text: `:factory: New Bharat AI Factory lead`,
             blocks: [
               { type: 'header', text: { type: 'plain_text', text: 'New lead — bharataifactory.com' } },
               { type: 'section', text: { type: 'mrkdwn', text: fields || '_(empty)_' } },
