@@ -1,0 +1,12 @@
+{
+  "name": "bharat-factory-ai-gtm",
+  "private": true,
+  "description": "Repo-root wrapper so Cloudflare Workers Builds can install and deploy the LP regardless of the dashboard Root Directory setting.",
+  "scripts": {
+    "build": "npm ci --prefix bharat-factory-lp",
+    "deploy": "npm --prefix bharat-factory-lp run deploy"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

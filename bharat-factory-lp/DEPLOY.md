@@ -8,10 +8,11 @@ If a **Pages** project was previously connected to this repo, delete / disconnec
 
 1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Workers** → **Import a repository**.
 2. Pick the `SalesUpLabs/bharat-factory-ai-gtm` repo and `main` branch.
-3. Build settings:
-   - **Root directory**: `bharat-factory-lp`
-   - **Build command**: `npm ci`
-   - **Deploy command**: `npx wrangler deploy`
+3. Build settings (leave **Root directory** blank — the repo-root `package.json` handles it):
+   - **Build command**: `npm run build`
+   - **Deploy command**: `npm run deploy`
+
+   These delegate into `bharat-factory-lp/` via `npm --prefix`, so the build works whether or not the Root Directory field is respected by CF. If you'd rather set Root Directory = `bharat-factory-lp`, use build `npm ci` and deploy `npx wrangler deploy` instead.
 4. Create the Worker. The first deploy will also provision the custom domains from `wrangler.toml` (`bharataifactory.com`, `www.bharataifactory.com`) — the zone must already live in the same Cloudflare account.
 5. Worker → **Settings → Variables and Secrets** → add secret `SLACK_WEBHOOK_URL` (encrypted) with the Slack Incoming Webhook URL. Redeploy for it to take effect.
 
