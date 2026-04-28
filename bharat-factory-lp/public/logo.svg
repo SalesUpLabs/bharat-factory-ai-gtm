@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <rect width="1024" height="1024" fill="#fbf7ef"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-weight="800" text-anchor="middle" letter-spacing="-3">
+    <text x="512" y="420" font-size="128" fill="#141414">Bharat</text>
+    <text x="512" y="610" font-size="220" fill="#e8742c">AI</text>
+    <text x="512" y="750" font-size="128" fill="#141414">Factory</text>
+  </g>
+</svg>
