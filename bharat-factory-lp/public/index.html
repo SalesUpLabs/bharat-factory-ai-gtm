@@ -45,6 +45,24 @@
   }
 </script>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1505655677764336');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1505655677764336&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
 :root{
   --ink:#141414; --ink2:#2a2a2a; --cream:#fbf7ef; --paper:#fff;
@@ -678,7 +696,6 @@ document.getElementById('lead-form').addEventListener('submit', function(e){
   e.preventDefault();
   const lead = Object.fromEntries(new FormData(this).entries());
   try { fetch('/api/lead', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(lead)}); } catch(_){}
-  if(window.fbq) fbq('track', 'Lead');
   if(window.gtag_report_conversion) gtag_report_conversion();
   const firstName = (lead.name || 'there').trim().split(/\s+/)[0] || 'there';
   const msg = `Hi Bharat AI Factory, I want free factory audit.\n\nName: ${lead.name||'-'}\nCompany: ${lead.company}\nPhone: ${lead.phone}\nWorkers: ${lead.workers||'-'}\nCity: ${lead.city||'-'}`;
@@ -688,7 +705,14 @@ document.getElementById('lead-form').addEventListener('submit', function(e){
   const card = document.getElementById('success-card');
   card.style.display = 'block';
   card.scrollIntoView({behavior:'smooth', block:'center'});
+  if(window.fbq) fbq('track', 'Lead', {value: 500, currency: 'INR'});
 });
+
+// Meta Pixel: Contact — fire on every WhatsApp CTA click
+document.addEventListener('click', function(e){
+  if(!window.fbq) return;
+  if(e.target.closest('.btn.wa, .wa-float, #success-wa-btn')) fbq('track', 'Contact');
+}, {passive:true});
 </script>
 
 </body>
